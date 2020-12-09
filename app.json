@@ -1,6 +1,9 @@
 {
   "environments": {
     "test": {
+		"scripts": {
+			"test": "equality_test.sh"
+		}
     }
   }
 }
