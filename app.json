@@ -2,7 +2,8 @@
   "environments": {
     "test": {
 		"scripts": {
-			"test": "equality_test.sh"
+			"test-setup": "python ./ClassSchdule/manage.py collectstatic --noinput",
+			"test": "python ./ClassSchedule/manage.py test"
 		}
     }
   }
