@@ -2,7 +2,6 @@
   "environments": {
     "test": {
 		"scripts": {
-			"test-setup": "python ./ClassSchdule/manage.py collectstatic --noinput",
 			"test": "python ./ClassSchedule/manage.py test"
 		}
     }
