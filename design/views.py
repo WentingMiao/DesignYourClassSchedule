@@ -3,7 +3,20 @@ from .models import event
 
 # Create your views here.
 def index(request):
-    return render(request, "design/index.html")
+    querySet = event.objects
+    mondaySet = querySet.filter(day="Monday")
+    TruesdaySet = querySet.filter(day="Tuesday")
+    WednesdaySet = querySet.filter(day="Wednesday")
+    ThrusdaySet = querySet.filter(day="Thursday")
+    FridaySet = querySet.filter(day="Friday")
+    events={}
+    events['Monday'] = mondaySet
+    events['Tuesday'] = TruesdaySet
+    events['Wednesday'] = WednesdaySet
+    events['Thursday'] = ThrusdaySet
+    events['Friday'] = FridaySet
+    print(events)
+    return render(request, "design/index.html", {"events": events})
 
 
 def event_create(request):
