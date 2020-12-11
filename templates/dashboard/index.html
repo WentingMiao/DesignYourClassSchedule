@@ -42,6 +42,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
+
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
@@ -49,13 +50,25 @@
                         <a class="nav-link" href="#">Documentation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">VIP</a>
+                        <a class="nav-link" href="#">Design Schedule</a>
                     </li>
                 </ul>
-                <form class="form-inline mt-2 mt-md-0">
-                    <a href="/accounts/login/" class="btn btn-primary my-2 my-sm-0"  name="sign in">Sign In</a>
 
-                    <a href="/accounts/register/" class="btn btn-outline-success my-2 my-sm-0" name="register">Register</a>
+                <form class="form-inline mt-2 mt-md-0">
+<!--                    <div class="btn btn-success ">Welcome {{ login_user }}</div>-->
+                    {% if request.user.is_active %}
+                      <div class="my-sm-2 my-2 " style="color:white" >Welcome {{ request.user.username }}    </div>
+                      <a href="/accounts/logout/" class="btn btn-outline-success my-2 my-sm-0"   style="margin:10px">Logout</a>
+
+                    {% else %}
+                      <a href="/accounts/login/" class="btn btn-outline-success my-2 my-sm-0"  style="margin:10px"name="sign in">Login</a>
+                      <a href="/accounts/register/" class="btn btn-outline-success my-2 my-sm-0" name="register"  style="margin:10px">Register</a>
+
+                    {% endif %}
+
+
+
+
                 </form>
             </div>
         </nav>
