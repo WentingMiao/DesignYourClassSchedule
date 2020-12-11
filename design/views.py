@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .models import event
 
 # Create your views here.
+@login_required
 def index(request):
     querySet = event.objects
     mondaySet = querySet.filter(day="Monday")
