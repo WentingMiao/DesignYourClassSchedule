@@ -9,7 +9,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
 
-    <link href="./static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -28,8 +28,8 @@
         }
     </style>
 
-    <link href="./static/css/index.css" rel="stylesheet">
-    <link href="./static/css/round_icon.css" rel="stylesheet">
+    <link href="/static/css/index.css" rel="stylesheet">
+    <link href="/static/css/round_icon.css" rel="stylesheet">
 </head>
 
 <body>
@@ -53,8 +53,9 @@
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
-                    <button class="btn btn-primary my-2 my-sm-0" type="submit" name="signin">Sign In</button>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="register">Register</button>
+                    <a href="/accounts/login/" class="btn btn-primary my-2 my-sm-0"  name="sign in">Sign In</a>
+
+                    <a href="/accounts/register/" class="btn btn-outline-success my-2 my-sm-0" name="register">Register</a>
                 </form>
             </div>
         </nav>
@@ -115,26 +116,26 @@
             </a>
         </div>
         <div class="container marketing">
-            <div class="row">
-                <div class="col-lg-4">
-                    <img class="round_icon" src="./static/pic/Luo.jpg" alt="luo's photo" width="50%" height="45%">
-                    <h2>Luo Siwei</h2>
-                    <p>An excellent java back-end engineer, responsible for the front-end development of the project. Very skilled in using bootstrap framework.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <img class="round_icon" src="./static/pic/Li.jpg" alt="Li's photo" width="50%" height="45%">
-                    <h2>Li Runfa</h2>
-                    <p>ELTE outstanding graduate has strong interest in computer science. Previous experience in document writing and coding test.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <img class="round_icon" src="./static/pic/Miao.png" alt="Miao's photo" width="50%" height="45%">
-                    <h2>Miao Wenting</h2>
-                    <p>the person in charge of the project. a Back-end intern from Huawei, responsible for Django back-end development in this project.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-            </div>
+<!--            <div class="row">-->
+<!--                <div class="col-lg-4">-->
+<!--                    <img class="round_icon" src="/static/pic/Luo.jpg" alt="luo's photo" width="50%" height="45%">-->
+<!--                    <h2>Luo Siwei</h2>-->
+<!--                    <p>An excellent java back-end engineer, responsible for the front-end development of the project. Very skilled in using bootstrap framework.</p>-->
+<!--                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4">-->
+<!--                    <img class="round_icon" src="/static/pic/Li.jpg" alt="Li's photo" width="50%" height="45%">-->
+<!--                    <h2>Li Runfa</h2>-->
+<!--                    <p>ELTE outstanding graduate has strong interest in computer science. Previous experience in document writing and coding test.</p>-->
+<!--                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4">-->
+<!--                    <img class="round_icon" src="/static/pic/Miao.png" alt="Miao's photo" width="50%" height="45%">-->
+<!--                    <h2>Miao Wenting</h2>-->
+<!--                    <p>the person in charge of the project. a Back-end intern from Huawei, responsible for Django back-end development in this project.</p>-->
+<!--                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <hr class="featurette-divider">
 
@@ -144,7 +145,7 @@
                     <p class="lead">Schedule was designed to help people take plan from concept to completion as quickly as possible.</p>
                 </div>
                 <div class="col-md-5">
-                    <img src="./static/pic/Schedulet2.jpg" alt= "S2 photo" width="100%" height="100%">
+                    <img src="/static/pic/Schedulet2.jpg" alt= "S2 photo" width="100%" height="100%">
                 </div>
             </div>
 
@@ -156,7 +157,7 @@
                     <p class="lead">Schedule takes security seriously and helps people avoid many common security mistakes.</p>
                 </div>
                 <div class="col-md-5 order-md-1">
-                    <img src="./static/pic/Schedulet1.jpg" alt= "S1 photo" width="100%" height="100%">
+                    <img src="/static/pic/Schedulet1.jpg" alt= "S1 photo" width="100%" height="100%">
                 </div>
             </div>
 
@@ -171,7 +172,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
-    <script src="./static/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="/static/assets/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
+
