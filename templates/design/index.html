@@ -14,7 +14,7 @@
       </div>
 
         <div class="col-xs-4">
-         <button class="btn-danger btn-warning btn-sm" style="margin-right:20px;width:100px;height:40px;font-size:19px;font-family: Monaco;">Delete</button>
+         <button class="btn-danger btn-warning btn-sm" style="margin-right:20px;width:100px;height:40px;font-size:19px;font-family: Monaco;"  data-toggle="modal" data-target="#deleteModal">Delete</button>
       </div>
       </div>
     </div>
@@ -255,10 +255,53 @@
   </div>
 </div>
 
+<div id="deleteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <form action="/design/event/delete/" method="POST" class="form-horizontal">
+        {% csrf_token %}
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="text-align:left">Delete</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+                 <div class="row">
+                        <lable class="col-sm-3 control-label no-padding-right">Course:</lable>
+                    <div class="col-sm-8">
+                        <select id="courseSelect" class="cascade-select" name="course"  >
+                        {% for obj in events.All %}
+                          <option value="{{obj.id}}">{{obj.name}}</option>
+                        {% endfor %}
+                        </select>
+                        <span class="help-block hidden"></span>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary"/>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+  </div>
+</div>
 
 {% endblock main %}
 {% block script %}
    <script src="/static/schedule-template-master/assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
   <script src="/static/schedule-template-master/assets/js/main.js"></script>
+<script>
+<!--    $(".cascade-select").each(function(n,m){-->
+<!--        $(m).cascade_select()-->
+<!--    })-->
+
+
+</script>
 {% endblock script %}
 </html>

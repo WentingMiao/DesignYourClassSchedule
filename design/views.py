@@ -1,7 +1,10 @@
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .models import event
 
 # Create your views here.
+@login_required
 def index(request):
     querySet = event.objects
     mondaySet = querySet.filter(day="Monday")
@@ -15,7 +18,8 @@ def index(request):
     events['Wednesday'] = WednesdaySet
     events['Thursday'] = ThrusdaySet
     events['Friday'] = FridaySet
-    print(events)
+    events['All'] = querySet.all()
+    # print(events)
     return render(request, "design/index.html", {"events": events})
 
 
@@ -30,7 +34,7 @@ def event_create(request):
     startTime = request.POST.get("startTime","")
     endTime = request.POST.get("endTime", "")
     details = request.POST.get("details", "")
-    print("%s %s %s %s " %(name, day, startTime, endTime))
+    # print("%s %s %s %s " %(name, day, startTime, endTime))
     if not name or not day or not startTime:
         print("error")
         redirect('/design/index/')
@@ -52,6 +56,27 @@ def event_create(request):
         print("successfully created")
         return redirect('/design/index/')
 
+def event_delete(request):
+    id = request.POST.get('course', '')
+    print(id)
+    try:
+        obj = event.objects.get(id=id)
+        obj.delete()
+    except Exception as e:
+        print(e)
+        return redirect('/design/index/')
+    else:
+        print("successfully deleted")
+        return redirect('/design/index/')
+
 
 def demo(request):
     return render(request, "design/demo.html")
+
+def get_events(request):
+    day = request.GET.get("day")
+    queryset = event.objects.filter(day=day)
+    arr = []
+    for obj in queryset:
+        arr.append({'id':obj.id, 'name': obj.name})
+    return JsonResponse({'code': 0, "data": arr})
