@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 from django.contrib import auth
 
@@ -27,7 +27,7 @@ def account_login(request):
     return render(request, "accounts/login.html", {"error": err})
 
 @login_required
-def logout(request):
+def account_logout(request):
     logout(request)
     return redirect("/")
 
