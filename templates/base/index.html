@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Schedule - Home</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+
+    <link href="/static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+    </style>
+    {% block cssfile %}
+    {% endblock cssfile %}
+    <link href="/static/css/index.css" rel="stylesheet">
+    <link href="/static/css/round_icon.css" rel="stylesheet">
+<!--    <link href="/static/css/timetable.css" rel="stylesheet">-->
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Schedule</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/design/">Design Schedule</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline mt-2 mt-md-0">
+<!--                    <div class="btn btn-success ">Welcome {{ login_user }}</div>-->
+                    {% if request.user.is_active %}
+                      <div class="my-sm-2 my-2 " style="color:white" >Welcome {{ request.user.username }}    </div>
+                      <a href="/accounts/logout/" class="btn btn-outline-success my-2 my-sm-0"   style="margin:10px">Logout</a>
+
+                    {% else %}
+                      <a href="/accounts/login/" class="btn btn-outline-success my-2 my-sm-0"  style="margin:10px"name="sign in">Login</a>
+                      <a href="/accounts/register/" class="btn btn-outline-success my-2 my-sm-0" name="register"  style="margin:10px">Register</a>
+
+                    {% endif %}
+
+
+
+
+                </form>
+            </div>
+        </nav>
+    </header>
+    {% block main %}
+    {% endblock main%}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/static/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="/static/assets/dist/js/bootstrap.bundle.min.js"></script>
+    {% block script %}
+    {% endblock script %}
+</body>
+
+</html>
+
