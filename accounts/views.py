@@ -29,7 +29,7 @@ def account_login(request):
 @login_required
 def account_logout(request):
     logout(request)
-    return redirect("/accounts/register/")
+    return redirect("/accounts/login/")
 
 def account_register(request):
     if not request.META['REQUEST_METHOD'] == 'POST':

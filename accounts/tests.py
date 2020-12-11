@@ -33,15 +33,3 @@ class loginTest(TestCase):
         response = account_register(request)
         self.assertEqual(response.status_code, 200)
 
-    # def test_logout_anoymousUser(self):
-    #     request = self.factory.get("/accounts/logout")
-    #     request.user = AnonymousUser()
-    #     response = account_logout(request)
-    #     self.assertEqual(response.status_code, 302)
-    #
-    # def test_logout_User(self):
-    #
-    #     request = self.factory.get("/accounts/logout")
-    #     request.user = self.user
-    #     response = account_logout(request)
-    #     self.assertEqual(response.status_code, 200)
