@@ -27,7 +27,7 @@ SECRET_KEY = '3weweh=72*@yhc28y$46z_h71ce=#m8pqj7*h@3bzd2qywpn1$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [design-your-class-schedule.herokuapp.com]
+ALLOWED_HOSTS = ["design-your-class-schedule.herokuapp.com"]
 
 
 # Application definition
