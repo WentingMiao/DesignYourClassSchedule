@@ -213,7 +213,7 @@
 
 <div id="createModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-    <form action="/design/event/create/" mothod="POST" class="form-horizontal">
+    <form action="/design/event/create/" method="POST" class="form-horizontal">
         {% csrf_token %}
         <div class="modal-content">
             <div class="modal-header">
@@ -225,7 +225,7 @@
                 <div class="row">
                         <lable class="col-sm-3 control-label no-padding-right">Name:</lable>
                     <div class="col-sm-8">
-                        <input type="text" id="name" placeholder="Enter class name" ></input>
+                        <input type="text" name="name" placeholder="Enter class name" ></input>
                         <span class="help-block hidden"></span>
                     </div>
                 </div>
@@ -233,7 +233,7 @@
                  <div class="row">
                         <lable class="col-sm-3 control-label no-padding-right">Day:</lable>
                     <div class="col-sm-8">
-                        <select id="day" >
+                        <select id="day"  name="day" >
                             <option value="Monday">Monday</option>
                             <option value="Tuesday">Tuesday</option>
                             <option value="Wednesday">Wednesday</option>
@@ -247,7 +247,7 @@
                 <div class="row">
                         <lable class="col-sm-3 control-label no-padding-right">Start time:</lable>
                     <div class="col-sm-8">
-                        <select id="startTime" >
+                        <select id="startTime" name="startTime" >
                             <option value="9:00">9:00</option>
                             <option value="9:30">9:30</option>
                             <option value="10:00">10:00</option>
@@ -275,7 +275,7 @@
                 <div class="row">
                         <lable class="col-sm-3 control-label no-padding-right">End time:</lable>
                     <div class="col-sm-8">
-                        <select id="endTime" >
+                        <select id="endTime"  name="endTime">
                             <option value="9:00">9:00</option>
                             <option value="9:30">9:30</option>
                             <option value="10:00">10:00</option>
@@ -302,7 +302,7 @@
                  <div class="row">
                         <lable class="col-sm-3 control-label no-padding-right">Details:</lable>
                     <div class="col-sm-8">
-                        <textarea id="details"  placeholder="" ></textarea>
+                        <textarea id="details"  placeholder=""  name="details"></textarea>
                         <span class="help-block hidden"></span>
                     </div>
                 </div>
@@ -313,20 +313,14 @@
             </div>
         </div>
     </form>
-    <!-- Modal content-->
-<!--    <div class="modal-content">-->
-<!--      <div class="modal-header">-->
-<!--        <button type="button" class="close" data-dismiss="modal">&times;</button>-->
-<!--        <h4 class="modal-title">Modal Header</h4>-->
-<!--      </div>-->
-<!--      <div class="modal-body">-->
-<!--        <p>Some text in the modal.</p>-->
-<!--      </div>-->
 
-<!--    </div>-->
+
+
 
   </div>
 </div>
+
+
 {% endblock main %}
 {% block script %}
    <script src="/static/schedule-template-master/assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
