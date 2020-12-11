@@ -1,4 +1,6 @@
 {
+  "addons": [ "heroku-postgresql" ],
+  "image": "heroku/python",
   "environments": {
     "test": {
 		"scripts": {
