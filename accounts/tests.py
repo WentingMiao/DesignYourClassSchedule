@@ -20,3 +20,28 @@ class loginTest(TestCase):
         request.user = self.user
         response = account_login(request)
         self.assertEqual(response.status_code, 200)
+
+    def test_register_anoymousUser(self):
+        request = self.factory.get("/accounts/register")
+        request.user = AnonymousUser()
+        response = account_register(request)
+        self.assertEqual(response.status_code, 200)
+
+    def test_register_User(self):
+        request = self.factory.get("/accounts/register")
+        request.user = self.user
+        response = account_register(request)
+        self.assertEqual(response.status_code, 200)
+
+    # def test_logout_anoymousUser(self):
+    #     request = self.factory.get("/accounts/logout")
+    #     request.user = AnonymousUser()
+    #     response = account_logout(request)
+    #     self.assertEqual(response.status_code, 302)
+    #
+    # def test_logout_User(self):
+    #
+    #     request = self.factory.get("/accounts/logout")
+    #     request.user = self.user
+    #     response = account_logout(request)
+    #     self.assertEqual(response.status_code, 200)
