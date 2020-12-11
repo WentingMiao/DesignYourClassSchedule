@@ -28,8 +28,8 @@
 </head>
 
 <body class="text-center">
-  <form class="form-signin" method="GET">
-
+  <form class="form-signin" method="POST">
+    {% csrf_token %}
     <h1 class="h3 mb-3 font-weight-normal">Sign in Schedule</h1>
     <label for="inputUsername" class="sr-only">Username</label>
     <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" required autofocus>
@@ -40,7 +40,7 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" action="/accounts/login">Sign in</button>
 <!--    <p class="mt-5 mb-3 text-muted">&copy; 2020-Forever</p>-->
   </form>
 </body>
